@@ -181,7 +181,11 @@ Set up syncing to `~/Dropbox/Alfred\ Sync` and supply the license for Powerpack.
 
 ## MacTeX
 
-After MacTeX is installed, I need to add the [MathTime Professional 2 fonts](http://www.pctex.com/mtpro2.html). General instructions can be found [here](http://cims.nyu.edu/~fennell/mtpro2/). For my set up, the fonts are installed as follows.
+After the MacTeX install, we need to install extra fonts and set up access to my sty files.
+
+### Fonts
+
+I need to add the [MathTime Professional 2 fonts](http://www.pctex.com/mtpro2.html). General instructions can be found [here](http://cims.nyu.edu/~fennell/mtpro2/). For my set up, the fonts are installed as follows.
 
 Change directory 
 
@@ -195,12 +199,17 @@ Then run the script, including the path to the font files
 
 `./mtpro2-texlive.sh -i /Users/miller/Dropbox/Software/TeX/MathTime Pro Fonts/mtp2fonts/mtp2fonts.zip.tpm`
 
+### Style Files
+
+My personal sty files are stored and synced on Dropbox. Create the symbolic link so TeX knows where to find them.
+
+`ln -s ~/Dropbox/Library/texmf/tex/latex ~/Library/texmf/tex/latex`
+
 ## Sublime Text
 
 ### Package Control
 
 Instructions on setting up Package Control with Sublime Text are found [here](https://packagecontrol.io/installation#st3). (Heeding their warning, I'm not reproducing the code but rather linking to theirs.)
-
 
 ###Sync Packages
 
