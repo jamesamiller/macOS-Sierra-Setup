@@ -15,9 +15,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "------------------------------"
 echo "Updating OSX...  If this requires a restart, run the script again."
 # Install all available updates
-sudo softwareupdate -iva
+sudo softwareupdate -ia --verbose
 # Install only recommended available updates
-#sudo softwareupdate -irv
+#sudo softwareupdate -ir --verbose
 
 # Install Xcode Command Line Tools.
 echo "------------------------------"
@@ -34,7 +34,7 @@ fi
 # Make sure we’re using the latest Homebrew.
 brew update
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install mas.
 echo "------------------------------"
