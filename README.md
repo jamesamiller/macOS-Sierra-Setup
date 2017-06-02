@@ -17,6 +17,8 @@ First take care of some basic things through the System Preferences panel, such 
 
 These can be set with command line instructions also, but require a restart in order to take effect.
 
+Also sign in to iCloud to get that synced to the new machine.
+
 ## Install Software
 
 The software described below is what I need on any macOS machine. Other miscellaneous software is local or relatively minor and can be installed on a case-by-case basis.
@@ -40,7 +42,7 @@ and run it
 
 `./prereq.sh`
 
-It ends asking you to sign into the App Store. You will need your App Store password for this. 
+It ends asking you to sign into the App Store. You will need your App Store password for this. Or, you could use the App Store app to sign in. 
 
 ### Overview of Software Installation 
 
@@ -102,16 +104,16 @@ This may take a while, but it's much faster than the manual method of searching 
 
 #### Post Install
 
-Most of these apps require a sign-in. This can be done now or later. At the very least, I need to sign in to 1password, since I don't know my passwords! 
-
-Signing into Dropbox or Google Drive, for example, will initiate the download of all its contents, and that will take a while. 
-
 Since an updated Ruby was installed, let's go ahead and install what we need for Jekyll development:
 
 ```bash
 gem install rubygems-update
 gem install jekyll
 ```
+
+Next, most of these apps require a sign-in and this can be done later. (Signing into Dropbox or Google Drive, for example, will initiate the download of its contents, and that will take a while.) 
+
+At the very least though, I need to sign in to 1password, since I don't know my passwords! 
 
 ### Mac App Store
 
@@ -125,23 +127,28 @@ and as before review it and make any last-minute changes. Change permissions to 
 
 Again, this is the best way of installing applications, and beats having to root around the App Store and manually install each one.
 
-
 ### Misc Applications
+
+Some of these are available to me through [UAH Chargerware](https://chargerware.uah.edu/Mac).
 
 - Office 2016 for Mac
 - Mathematica
 - Matlab
 - MacTeX
+- Adobe Creative Cloud
+	- Acrobat DC
+	- Lightroom
+	- Photoshop
 - Camtasia
 - CrashPlan
 - GPG Suite
 - Keybase
 - Intel Compilers
 - ScanSnap Tools
+- Xcode
+- macvim (via Homebrew, and it needs the full Xcode install)
 
-We can also defer these installs to later, unless we have them on a USB and can quickly do it now.
-
-There will also be Adobe applications that we'll need through the Creative Cloud control panel, such as Acrobat, Photoshop, and Illustrator.
+**Note:** If Office, Mathematica, MacTex, and Intel are on a USB flash drive, much time spent downloading can be eliminated.
 
 Utility and software installation is now done, but we need to configure bash and some other things.
 
@@ -149,9 +156,11 @@ Utility and software installation is now done, but we need to configure bash and
 
 ## Bash
 
-Clone my custom `.dotfiles` repository to the local repository `~/GitHub/dotfiles` and run `symlinks.sh` to construct symbolic links from the home directory dot files to the local repository.
+Clone my custom remote `.dotfiles` repository to `~/GitHub/dotfiles` and run `symlinks.sh` to construct symbolic links from the home directory to the local repository.
 
 ## Specific macOS Preferences
+
+I don't have many for the time being, and these can be done manually.
 
 ```bash
 # Show the ~/Library folder
@@ -175,6 +184,8 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Specific Applications
 
+At this point, I need access to Dropbox, so sign in and download the Dropbox folder.
+
 ## Alfred
 
 Set up syncing to `~/Dropbox/Alfred\ Sync` and supply the license for Powerpack.
@@ -189,7 +200,7 @@ I need to add the [MathTime Professional 2 fonts](http://www.pctex.com/mtpro2.ht
 
 Change directory 
 
-`cd /Users/miller/Dropbox/Software/TeX/MathTime Pro Fonts/mtpro2-texlive`
+`cd /Users/miller/Dropbox/Software/TeX/MathTime\ Pro\ Fonts/mtpro2-texlive`
 
 and make the installer script user executable (if it isn't already)
 
@@ -197,13 +208,18 @@ and make the installer script user executable (if it isn't already)
 
 Then run the script, including the path to the font files
 
-`./mtpro2-texlive.sh -i /Users/miller/Dropbox/Software/TeX/MathTime Pro Fonts/mtp2fonts/mtp2fonts.zip.tpm`
+`./mtpro2-texlive.sh -i ../mtp2fonts/mtp2fonts.zip.tpm`
 
 ### Style Files
 
-My personal sty files are stored and synced on Dropbox. Create the symbolic link so TeX knows where to find them.
+My personal sty files are stored and synced on Dropbox. TeXLive will look for custom style files in `~/Library/texmf/tex/latex`, so we need to create a symbolic link. 
 
-`ln -s ~/Dropbox/Library/texmf/tex/latex ~/Library/texmf/tex/latex`
+```bash
+cd ~/Library
+mkdir texmf/tex
+cd texmf/tex
+ln -s ~/Dropbox/Library/texmf/tex/latex
+```
 
 ## Sublime Text
 
@@ -211,7 +227,7 @@ My personal sty files are stored and synced on Dropbox. Create the symbolic link
 
 Instructions on setting up Package Control with Sublime Text are found [here](https://packagecontrol.io/installation#st3). (Heeding their warning, I'm not reproducing the code but rather linking to theirs.)
 
-###Sync Packages
+### Sync Packages
 
 I [sync packages with Dropbox](https://packagecontrol.io/docs/syncing). I just need to create a sym link to those with
 
@@ -223,6 +239,10 @@ ln -s ~/Dropbox/Sublime/User
 
 Now any package additions or changes will be synced across all my machines. 
 
+# Wrap Up #
+
+- Sign in to other Internet Accounts (e.g., gmail)
+- Sign in to various apps like Chrome (and it's extensions), Evernote, and so on
 
 
 
