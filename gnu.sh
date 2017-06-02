@@ -20,7 +20,7 @@ fi
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 # Install GNU core and find utilities.
 brew install coreutils
@@ -39,7 +39,7 @@ brew install gnu-indent --with-default-names
 brew install gnu-sed --with-default-names
 brew install gnu-tar --with-default-names
 brew install gnu-which --with-default-names
-brew install grep       # newer version of GNU tool that came with macOS
+brew install grep --with-default-names      # newer version of GNU tool that came with macOS
 brew install make --with-default-names      # newer version of GNU tool that came with macOS
 brew install gzip
 brew install wget
@@ -62,8 +62,7 @@ chsh -s /usr/local/bin/bash
 brew install moreutils
 brew install openssh    # newer version of GNU tool that came with macOS
 brew install vim --with-default-names       # newer version of GNU tool that came with macOS
-brew install macvim --override-system-vim --custom-system-icons
-brew install zsh
+#brew install zsh
 
 # Remove outdated versions from the cellar.
 brew cleanup
