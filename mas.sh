@@ -35,7 +35,7 @@ mas install 409203825
 # Pages
 mas install 409201541
 # Geogebra 5
-mas install 845142834
+#mas install 845142834 # This did not work
 # Xcode (install later and separately if needed)
 #mas install 497799835
 
