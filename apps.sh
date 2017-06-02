@@ -20,7 +20,7 @@ fi
 brew update
 
 # Upgrade any already-installed formulae.
-brew upgrade --all
+brew upgrade
 
 ############### Homebrew ################
 
@@ -74,7 +74,7 @@ brew cask install --appdir="/Applications" viscosity
 brew cask install --appdir="/Applications" google-earth
 brew cask install --appdir="/Applications" google-drive
 brew cask install --appdir="/Applications" spotify
-brew cask install --appdir="/Applications" adobe-creative-cloud
+#brew cask install --appdir="/Applications" adobe-creative-cloud
 brew cask install caffeine
 
 # Remove outdated versions from the cellar.
