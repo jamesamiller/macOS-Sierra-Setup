@@ -107,13 +107,11 @@ This may take a while, but it's much faster than the manual method of searching 
 Since an updated Ruby was installed, let's go ahead and install what we need for Jekyll development:
 
 ```bash
-gem install rubygems-update
-gem install jekyll
+gem update --system
+gem install bundler
 ```
 
-Next, most of these apps require a sign-in and this can be done later. (Signing into Dropbox or Google Drive, for example, will initiate the download of its contents, and that will take a while.) 
-
-At the very least though, I need to sign in to 1password, since I don't know my passwords! 
+Next, most of these apps require a sign-in and this can be done later. At the very least though, I need to sign in to `1password`, since I don't know my passwords! I'll need these for some of the [Misc Applications](#misc-applications) below.
 
 ### Mac App Store
 
@@ -145,10 +143,10 @@ Some of these are available to me through [UAH Chargerware](https://chargerware.
 - Keybase
 - Intel Compilers
 - ScanSnap Tools
-- Xcode
-- macvim (via Homebrew, and it needs the full Xcode install)
+- Xcode: `brew install xcode`
+- macvim (need the full Xcode for this): `brew install macvim`
 
-**Note:** If Office, Mathematica, MacTex, and Intel are on a USB flash drive, much time spent downloading can be eliminated.
+**Note:** If Office, Mathematica, MacTex, and Intel are on a USB flash drive, we can save a lot of time by eliminating the downloading.
 
 Utility and software installation is now done, but we need to configure bash and some other things.
 
@@ -184,7 +182,13 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 
 # Specific Applications
 
-At this point, I need access to Dropbox, so sign in and download the Dropbox folder.
+At this point, I need access to some folders in Dropbox, so sign in and selectively sync
+```bash
+Alfred Sync
+iTerm2
+Library
+Sublime
+```
 
 ## Alfred
 
@@ -243,6 +247,7 @@ Now any package additions or changes will be synced across all my machines.
 
 - Sign in to other Internet Accounts (e.g., gmail)
 - Sign in to various apps like Chrome (and it's extensions), Evernote, and so on
+- Sync the rest of Dropbox
 
 
 
