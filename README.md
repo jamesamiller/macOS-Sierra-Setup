@@ -1,6 +1,6 @@
 # macOS 10.12 Sierra Setup
 
-These instructions are for configuring a new install of macOS 10.12 Sierra, based on my research, teaching, scientific computing, and personal needs. My starting point was the macOS setup [here](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c), but I've drawn heavily upon a few other repositories, such as [dev-setup](https://github.com/donnemartin/dev-setup) and the famous [dotfiles](https://github.com/mathiasbynens/dotfiles). Also, [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line) has an extensive list of macOS shell commands that could be incorporated into a setup or aliased in a dot file.
+These instructions are for configuring a new install of macOS 10.12 Sierra, based on my research, teaching, scientific computing, and personal needs. My starting point was the macOS setup by [Kevin Elliott](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c), but I've drawn heavily upon a few other repositories, such as [dev-setup](https://github.com/donnemartin/dev-setup) and the famous [dotfiles](https://github.com/mathiasbynens/dotfiles) of Mathias Bynens. Also, [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line) has an extensive list of macOS shell commands that could be incorporated into a setup or aliased in a dot file.
 
 You can modify these scripts to suit yourself. If you find it useful, please leave a comment and/or tell others about it.
 
@@ -75,7 +75,7 @@ and run it
 
 We want to use the GNU `coreutils` and `findutils` with their usual names (and not with the "g" prefix). The Homebrew coreutils install creates a directory `$(brew --prefix coreutils)/libexec/gnubin` that contains the usual names sym linked to the GNU "g"-prefixed ones in `$(brew --prefix coreutils)/bin`.
 
-We thus need to be sure that `$(brew --prefix coreutils)/libexec/gnubin` is in PATH before the directory that contains the default BSD macOS versions. The same argument goes for `findutils`.
+We thus need to be sure that `$(brew --prefix coreutils)/libexec/gnubin` is in PATH before the directories that contains the default BSD macOS versions (such as `/bin` and `/usr/bin`). The same argument goes for `findutils`.
 
 This is accomplished with the following lines in my `.path` file, which in turn is called by my `.bash_profile`. 
 
@@ -143,6 +143,7 @@ Some of these are available to me through [UAH Chargerware](https://chargerware.
 - Keybase
 - Intel Compilers
 - ScanSnap Tools
+- Transmission
 - Xcode: `brew install xcode`
 - macvim (need the full Xcode for this): `brew install macvim`
 
@@ -154,7 +155,13 @@ Utility and software installation is now done, but we need to configure bash and
 
 ## Bash
 
-Clone my custom remote `.dotfiles` repository to `~/GitHub/dotfiles` and run `symlinks.sh` to construct symbolic links from the home directory to the local repository.
+Create the directory`~/GitHub/dotfiles`.
+
+Clone my remote `.dotfiles` repository 
+
+`https://github.com/jamesamiller/dotfiles.git` 
+
+to `~/GitHub/dotfiles` and run `symlinks.sh` to construct symbolic links from the home directory to the local repository.
 
 ## Specific macOS Preferences
 
@@ -189,10 +196,15 @@ iTerm2
 Library
 Sublime
 ```
+The other folders in Dropbox will take a long time to sync, and so do this later.
 
 ## Alfred
 
 Set up syncing to `~/Dropbox/Alfred\ Sync` and supply the license for Powerpack.
+
+## iTerm2
+
+Set up preference syncing in iTerm2 to the directory `~/Dropbox/iTerm2`.
 
 ## MacTeX
 
