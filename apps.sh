@@ -28,7 +28,6 @@ brew install git-flow
 
 # Misc formulae
 brew install pandoc
-brew install transmission
 
 ############### Cask ################
 
