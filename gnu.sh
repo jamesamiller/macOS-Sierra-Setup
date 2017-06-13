@@ -55,7 +55,7 @@ chsh -s /usr/local/bin/bash
 # Install other utilities and other more recent versions of some macOS tools. 
 brew install moreutils
 brew install openssh    # newer version of GNU tool that came with macOS
-brew install vim --with-default-names       # newer version of GNU tool that came with macOS
+brew install vim --with-override-system-vi  # newer version of GNU tool that came with macOS
 #brew install zsh
 
 # Remove outdated versions from the cellar.
