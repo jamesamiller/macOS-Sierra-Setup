@@ -1,8 +1,15 @@
 # macOS 10.12 Sierra Setup
 
-These instructions are for configuring a new install of macOS 10.12 Sierra, based on my research, teaching, scientific computing, and personal needs. My starting point was the macOS setup by [Kevin Elliott](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c), but I've drawn heavily upon a few other repositories, such as [dev-setup](https://github.com/donnemartin/dev-setup) and the famous [dotfiles](https://github.com/mathiasbynens/dotfiles) of Mathias Bynens. Also, [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line) has an extensive list of macOS shell commands that could be incorporated into a setup or aliased in a dot file.
+These instructions are for configuring a new install of macOS 10.12 Sierra, based on my research, teaching, scientific computing, and personal needs. My starting point was the macOS setup by [Kevin Elliott](https://gist.github.com/kevinelliott/7a152c556a83b322e0a8cd2df128235c), but I've drawn heavily upon a few other repositories, such as [dev-setup](https://github.com/donnemartin/dev-setup) and the famous [dotfiles](https://github.com/mathiasbynens/dotfiles) of Mathias Bynens. Also, [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line) has an extensive list of macOS shell commands that could be incorporated into a setup or aliased in a dotfile.
 
-You can modify these scripts to suit yourself. If you find it useful, please leave a comment and/or tell others about it.
+You can clone or fork this repository and modify the accompanying scripts to suit yourself. If you find it useful, please let me know and tell others about it.
+
+## Before Beginning
+
+Have available
+
+- iCloud password
+- Mac App Store account and password (if different, which mine is)
 
 ## Basic macOS Preferences
 
@@ -25,7 +32,7 @@ The software described below is what I need on any macOS machine. Other miscella
 
 ### Prerequisites
 
-In order to do the software and utility installs, we need a couple of tools first:
+In order to do the software and command line utility installs, we need a couple of tools first:
 - Xcode Command Line Tools
 - [Homebrew](https://brew.sh/)
 - [mas](https://github.com/mas-cli/mas), which is a great way to install things from the Mac App Store
@@ -212,6 +219,8 @@ After the MacTeX install, we need to install extra fonts and set up access to my
 
 ### Fonts
 
+**Note:** Logout of the bash shell and start a new one, or TeXLive will not be in the path and the following install will hang.
+
 I need to add the [MathTime Professional 2 fonts](http://www.pctex.com/mtpro2.html). General instructions can be found [here](http://cims.nyu.edu/~fennell/mtpro2/). For my set up, the fonts are installed as follows.
 
 Change directory 
@@ -232,8 +241,10 @@ My personal sty files are stored and synced on Dropbox. TeXLive will look for cu
 
 ```bash
 cd ~/Library
-mkdir texmf/tex
-cd texmf/tex
+mkdir texmf
+cd texmf
+mkdir tex
+cd tex
 ln -s ~/Dropbox/Library/texmf/tex/latex
 ```
 
