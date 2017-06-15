@@ -229,7 +229,7 @@ Change directory
 
 and make the installer script user executable (if it isn't already)
 
-`chmod +x ./mtpro2-texlive.sh`
+`chmod u+x ./mtpro2-texlive.sh`
 
 Then run the script, including the path to the font files
 
@@ -268,12 +268,29 @@ Now any package additions or changes will be synced across all my machines.
 
 # Wrap Up #
 
+## Misc
+
 - Sign in to other Internet Accounts (e.g., gmail)
 - Sign in to various apps like Chrome (and it's extensions), Evernote, and so on
 - Sync the rest of Dropbox
 
+## Create Symbolic Links
 
+I've organized my stuff into a few directories that are stored on Dropbox, which keeps them in sync across all computers. However, it's (a little) easier if I access those directories from `~`. So, create symbolic links from the home directory to Dropbox using the file `symlinks.sh`.
 
+So, retrieve the file
+
+`curl -o symlinks.sh https://raw.githubusercontent.com/jamesamiller/macOS-Sierra-Setup/symlinks.sh`
+
+change permissions
+
+`chmod u+x symlinks.sh`
+
+and execute it
+
+`./symlinks.sh`
+
+Your directories will surely be different from mine, as may be your sync method, so modify as needed.
 
 
 
