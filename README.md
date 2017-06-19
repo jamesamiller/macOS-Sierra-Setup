@@ -280,7 +280,7 @@ I've organized my stuff into a few directories that are stored on Dropbox, which
 
 So, retrieve the file
 
-`curl -o symlinks.sh https://raw.githubusercontent.com/jamesamiller/macOS-Sierra-Setup/symlinks.sh`
+`curl -o symlinks.sh https://raw.githubusercontent.com/jamesamiller/macOS-Sierra-Setup/master/symlinks.sh`
 
 change permissions
 
