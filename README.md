@@ -266,6 +266,16 @@ ln -s ~/Dropbox/Sublime/User
 
 Now any package additions or changes will be synced across all my machines. 
 
+### Markdown Support
+
+The `Markdown` package for `Sublime Text` will be loaded in the last step. Let's take care of the configuration for the viewer `Marked 2` at this point.
+
+Download custom `css` themes directory with
+
+`curl -o md_css_themes https://raw.githubusercontent.com/jamesamiller/macOS-Sierra-Setup/master/md_css_themes`
+
+and then load these into `Marked 2` via the `Preferences -> Style` panel. 
+
 # Wrap Up #
 
 ## Misc
@@ -273,6 +283,7 @@ Now any package additions or changes will be synced across all my machines.
 - Sign in to other Internet Accounts (e.g., gmail)
 - Sign in to various apps like Chrome (and it's extensions), Evernote, and so on
 - Sync the rest of Dropbox
+- Delete `gnu.sh`, `apps.sh`, `mas.sh`, and the `md_css_themes` directory
 
 ## Create Symbolic Links
 
@@ -280,7 +291,7 @@ I've organized my stuff into a few directories that are stored on Dropbox, which
 
 So, retrieve the file
 
-`curl -o symlinks.sh https://raw.githubusercontent.com/jamesamiller/macOS-Sierra-Setup/symlinks.sh`
+`curl -o symlinks.sh https://raw.githubusercontent.com/jamesamiller/macOS-Sierra-Setup/master/symlinks.sh`
 
 change permissions
 

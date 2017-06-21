@@ -16,6 +16,8 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
+# Marked 2
+mas install 890031187
 # Ulysses
 mas install 623795237
 # Markdown Pro
